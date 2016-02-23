@@ -1,28 +1,30 @@
-== README
+##Background
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Built a CRUD app for a database of kittens. Also connected to Flickr's API for images of kittens on the main page.
 
-Things you may want to cover:
+This exercise was inspired by http://www.theodinproject.com/ruby-on-rails/apis. 
 
-* Ruby version
+It helped me understand how to connect to an API and use it to get information I need on my own site.
 
-* System dependencies
+##Install
 
-* Configuration
+- Clone the files on to your local machine:
 
-* Database creation
+  $ git clone https://github.com/ravip0711/kittens_app.git
 
-* Database initialization
+- Using your terminal, navigate to the application directory and run bundle install to gather the necessary gems:
 
-* How to run the test suite
+  $ bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+- Run the rake commands to create, migrate, and seed the postgres db:
 
-* Deployment instructions
+  $ rake db:seed db:migrate db:seed
 
-* ...
+- Launch the rails server:
+  
+  $ rails s
+
+- Open up your browser and navigate to localhost:3000
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
