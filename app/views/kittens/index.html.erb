@@ -1,0 +1,46 @@
+<h1>Listing kittens</h1>
+</br>
+
+<h2>Flickr API - Personal Pictures</h2>
+<% @flickr_photos.each do |p| %>
+  <% info = flickr.photos.getInfo(photo_id: p.id) %>
+  <%= link_to(image_tag(FlickRaw.url_m(info), class: "flickr_img", title: p.title), FlickRaw.url_photopage(info), :target => "_blank") %>
+<% end %>
+
+<h2>Flicker API - Kitten Pictures</h2>
+<% @flickr_kittens.each do |kat| %>
+  <%= link_to(image_tag(FlickRaw.url_m(kat), class: "flickr_img", title: kat.title), FlickRaw.url_photopage(kat), :target => "_blank") %>
+<% end %>
+
+</br>
+</br>
+<h2>Kittens List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Cuteness</th>
+      <th>Softness</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td><%= kitten.name %></td>
+        <td><%= kitten.age %></td>
+        <td><%= kitten.cuteness %></td>
+        <td><%= kitten.softness %></td>
+        <td><%= link_to 'Show', kitten %></td>
+        <td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
+        <td><%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kitten', new_kitten_path %>

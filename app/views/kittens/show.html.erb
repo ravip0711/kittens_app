@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h5>Name:</h5>
+<%= @kitten.name  %>
+<h5>Age:</h5>
+<%= @kitten.age %>
+<h5>Cutness:</h5>
+<%= @kitten.cuteness %>
+<h5>Softness:</h5>
+<%= @kitten.softness %>
+</br>
+</br>
+
+<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Delete', kitten_path(@kitten), method: "delete" %> |
+<%= link_to 'Back', kittens_path %>
